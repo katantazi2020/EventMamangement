@@ -167,8 +167,8 @@ namespace EventMamangement
         {
             Address address = new Address();
             address.Street = txtstreet.Text;
-            address.city = txtcity.Text;
-            address.Zipcode = txtzipcode.Text;
+            address.City = txtcity.Text;
+            address.ZipCode = txtzipcode.Text;
             address.Country = (Countries)cmbcountry.SelectedIndex;
             return address;
 
@@ -183,8 +183,8 @@ namespace EventMamangement
                 txtfirstname.Text = partcipant.FirstName;
                 txtlastname.Text = partcipant.LastName;
                 txtstreet.Text = partcipant.Address.Street;
-                txtcity.Text = partcipant.Address.city;
-                txtzipcode.Text = partcipant.Address.Zipcode;
+                txtcity.Text = partcipant.Address.City;
+                txtzipcode.Text = partcipant.Address.ZipCode;
 
                 cmbcountry.SelectedIndex = (int)partcipant.Address.Country;
             }

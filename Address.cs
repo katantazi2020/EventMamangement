@@ -9,8 +9,8 @@ namespace EventMamangement
     public class Address
     {
         private string street;
-        private string ZipCode;
-        private string City;
+        private string zipcode;
+        private string city;
         private Countries country;
 
 
@@ -18,7 +18,7 @@ namespace EventMamangement
         public Address(string street, string Zip, string City, Countries Country)
         {
             this.street = street;
-            this.ZipCode = Zip;
+            this.zipcode = Zip;
             this.City = City;
             this.country = Country;
         }
@@ -35,8 +35,8 @@ namespace EventMamangement
         public Address(Address theother)
         {
             this.street = theother.street;
-            this.ZipCode = theother.ZipCode;
-            this.City = theother.City;
+            this.zipcode = theother.zipcode;
+            this.city = theother.City;
 
         }
 
@@ -46,7 +46,7 @@ namespace EventMamangement
             get { return street; }
             set { street = value; }
         }
-        public string city
+        public string City
         {
             get { return city; }
             set
@@ -55,15 +55,15 @@ namespace EventMamangement
                     city = value;
             }
         }
-        public string Zipcode
+        public string ZipCode
         {
-            get { return Zipcode; }
-            set { Zipcode = value; }
+            get { return zipcode; }
+            set { zipcode = value; }
         }
         public Countries Country
         {
-            get { return Country; }
-            set { Country = value; }
+            get { return country; }
+            set { country = value; }
         }
         #endregion
         public bool validate()
@@ -74,7 +74,7 @@ namespace EventMamangement
         public string GetAddressLabel()
         {
             string strout = street + Environment.NewLine;
-            strout += Zipcode + " " + city;
+            strout += zipcode + " " + city;
             return strout;
         }
         public string GetCountryString()
@@ -85,7 +85,7 @@ namespace EventMamangement
         }
         public override string ToString()
         {
-            string strout = string.Format("{0, -25} {1, -8} {2, -10} {3}", street, Zipcode, city, GetCountryString());
+            string strout = string.Format("{0, -25} {1, -8} {2, -10} {3}", street, zipcode, city, GetCountryString());
             return strout;
         }
 
