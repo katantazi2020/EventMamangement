@@ -252,6 +252,6 @@ namespace EventMamangement
           groupBox.Text = String.Empty;
           
         }
-        
+         
     }
 }
