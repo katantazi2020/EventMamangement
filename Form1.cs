@@ -102,6 +102,10 @@ namespace EventMamangement
             }
             return ok;
         }
+        /// <summary>
+        /// Clear the List Box, call the method GetContactInfo and 
+        /// using the ListBox's AddRange method, add the array  to ListBox
+        /// </summary>
         private void UpdateGUI()
         {
             string[] strInfo = eventManager.participants.GetParticipantsInfo();
@@ -110,6 +114,7 @@ namespace EventMamangement
                 lstparticipants.Items.Clear();
                 lstparticipants.Items.AddRange(strInfo);
                 txtnumofparticipant.Text = lstparticipants.Items.Count.ToString();
+              
 
             }
             double totalCost = eventManager.CalcTotalCost();
@@ -149,14 +154,16 @@ namespace EventMamangement
         private bool ReadParticipantData(ref Participant partcipant)
         {
             ///Names and  address are validated in the participant class
-            Participant participant = new Participant(); 
+            Participant participant = new Participant();
+            Address address = ReadAddress();
             partcipant.FirstName = txtfirstname.Text;
             partcipant. LastName  = txtlastname.Text;
             
-            Address address = ReadAddress();
+           
             
             //connect address to a participant  object
             partcipant.Address = address;
+            //partcipant.Address.Street = txtstreet.Text;
             bool ok = partcipant.Validate();
             return ok;
                  

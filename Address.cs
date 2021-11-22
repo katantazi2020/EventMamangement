@@ -32,9 +32,9 @@ namespace EventMamangement
             this.country = country;
         }
         // Call the next constructor for Reuse
-        public Address(string street, string zip, string City) :
+        public Address(string street, string zip, string city) :
 
-            this(street, zip, City, Countries.Sverige)
+            this(street, zip, city, Countries.Sverige)
         {
 
         }

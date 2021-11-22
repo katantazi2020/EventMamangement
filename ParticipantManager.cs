@@ -15,7 +15,7 @@ namespace EventMamangement
         public ParticipantManager()
         {
             participants = new List<Participant>();
-            //TestValue();
+            TestValues();
         }
         #region METHODS TO HANDLE THE LIST
         public Participant GetParticipantAt(int index)
@@ -39,11 +39,13 @@ namespace EventMamangement
 
         public bool Addparticipant(string firstName, string lastName, Address addressIn)
         {
-            Participant participant = new Participant();
+            Participant participant = new Participant(firstName, lastName, addressIn);
+           
+           
             participants.Add(participant);
             return true;
         }
-        public bool AddPartcipant(Participant participantIn, Address addressIn)
+        public bool AddPartcipant(Participant participantIn)
         {
             if (participantIn == null)
                 return false;
@@ -92,10 +94,10 @@ namespace EventMamangement
 
         #endregion
 
-       // public void TestValues()
-       // {
-        // AddPartcipant(new Participant("Apu", "Simpsson", new Address("Simpson North avenue"))
-       // }
+        public void TestValues()
+        {
+            AddPartcipant(new Participant("Apu", "Simpsson", new Address("londonavenue12", "malmo", "123", Countries.Brazil)));
+        }
 
 
 

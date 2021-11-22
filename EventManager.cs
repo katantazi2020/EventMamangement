@@ -9,7 +9,7 @@ namespace EventMamangement
    class EventManager
     {
         // FIELDS
-        private double costPerperson;
+        private double costperperson;
         private double feePerperson;
         private string title;
 
@@ -37,11 +37,11 @@ namespace EventMamangement
         }
         public double CostPerPerson
         {
-            get { return costPerperson; }
+            get { return costperperson; }
             set
             {
                 if (value >= 0.0)
-                    costPerperson = value;
+                    costperperson = value;
             }
         }
         public double FeePerperson
@@ -59,7 +59,7 @@ namespace EventMamangement
         #region OTHER METHODS
         public double CalcTotalCost()
         {
-            return participants.Count * costPerperson;
+            return participants.Count * costperperson;
         }
         public double CalculateTotalFees()
         {
