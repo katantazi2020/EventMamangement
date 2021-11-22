@@ -11,28 +11,28 @@ namespace EventMamangement
         // FIELDS
         private double costPerperson;
         private double feePerperson;
-        private string tittle;
+        private string title;
 
 
 
-        ParticipantManager pttManager = new ParticipantManager();
+        ParticipantManager participantManager = new ParticipantManager();
         //CONSTRUCTOR
         public EventManager()
         {
-            pttManager = new ParticipantManager();
+            participantManager = new ParticipantManager();
         }
         #region PROPERTIES
         public ParticipantManager participants
         {
-            get { return pttManager; }
+            get { return participantManager; }
         }
         public string Title
         {
-            get { return tittle; }
+            get { return title; }
             set
             {
                 if (!string.IsNullOrEmpty(value))
-                    tittle = value;
+                    title = value;
             }
         }
         public double CostPerPerson

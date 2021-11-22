@@ -9,7 +9,7 @@ namespace EventMamangement
      class ParticipantManager
     {
         //FIELDS
-        private List<Participant> participants;
+        private List<Participant> participants; //List of particp
 
         // CONSTRUCTOR
         public ParticipantManager()
@@ -20,9 +20,11 @@ namespace EventMamangement
         #region METHODS TO HANDLE THE LIST
         public Participant GetParticipantAt(int index)
         {
-            if (index < 0 || index >= participants.Count)
-                return null;
-            return participants[index];
+            if (CheckIndex(index))
+                return participants[index];
+            return null;
+               
+           
             // returning a copy can be a better way comment eg
             //participant origobj  =  participants[index];
             //participant copyobj = new participant(origobj);
@@ -88,11 +90,10 @@ namespace EventMamangement
 
         #endregion
 
-        //public void TestValues()
-        // {
-        //participants.Clear();
-        //AddParticipant(new Partcipant("Apu","simpson", new Address("ththtosos")))
-        // }
+       // public void TestValues()
+       // {
+        // AddPartcipant(new Participant("Apu", "Simpsson", new Address("Simpson North avenue"))
+       // }
 
 
 

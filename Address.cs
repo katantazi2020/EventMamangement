@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventMamangement
 {
-    public class Address
+     class Address
     {
         private string street;
         private string zipcode;
@@ -14,31 +14,50 @@ namespace EventMamangement
         private Countries country;
 
 
-
-        public Address(string street, string Zip, string City, Countries Country)
+        #region CONSTRUCTORS
+        /// <summary>
+        /// Constructor with four parameters - used by other constructors too
+        /// strings are initiated  to null by the compiler.
+        /// That is why it is better to assign them as Empty so that nolonger null
+        /// </summary>
+        /// <param name="street"></param>
+        /// <param name="zip"></param>
+        /// <param name="City"></param>
+        /// <param name="Country"></param>
+        public Address(string street, string zip, string city, Countries country)
         {
             this.street = street;
-            this.zipcode = Zip;
-            this.City = City;
-            this.country = Country;
+            this.zipcode = zip;
+            this.city = city;
+            this.country = country;
         }
-        public Address(string street, string Zip, string City) :
+        // Call the next constructor for Reuse
+        public Address(string street, string zip, string City) :
 
-            this(street, Zip, City, Countries.Sverige)
+            this(street, zip, City, Countries.Sverige)
         {
 
         }
+        /// <summary>
+        /// Dafault constructor calling another constructor in this class.
+        /// </summary>
         public Address() : this(string.Empty, string.Empty, string.Empty)
         {
 
         }
+        /// <summary>
+        /// copy constructor, no need  to copy all members
+        /// </summary>
+        /// <param name="theother"></param>
         public Address(Address theother)
         {
             this.street = theother.street;
             this.zipcode = theother.zipcode;
-            this.city = theother.City;
+            this.city = theother.city;
+            this.country = theother.country;
 
         }
+        #endregion 
 
         #region PROPERTIES
         public string Street
@@ -66,6 +85,14 @@ namespace EventMamangement
             set { country = value; }
         }
         #endregion
+        #region OTHERMETHODS
+        /// <summary>
+        /// Do some checking of data.
+        /// Address must have city and country as an enum
+        /// and should always have a default value
+        /// city is initiated to null  so it should get validates
+        /// </summary>
+        /// <returns></returns>
         public bool validate()
         {
             bool cityok = !string.IsNullOrEmpty(City);
@@ -88,6 +115,7 @@ namespace EventMamangement
             string strout = string.Format("{0, -25} {1, -8} {2, -10} {3}", street, zipcode, city, GetCountryString());
             return strout;
         }
+        #endregion
 
 
 
