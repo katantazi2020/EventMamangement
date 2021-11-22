@@ -36,7 +36,7 @@ namespace EventMamangement
             if (string.IsNullOrEmpty(txttitle.Text))
                 txttitle.Text = "Untitled Event";
 
-            eventManager.Title = txttitle.Text;
+            eventManager.Title = txttitle.Text + "By <Harrison Katantazi>";
             // title of the mainform
             this.Text =eventManager.Title;
             bool costAmountoK = ReadCostPerPerson();
@@ -91,7 +91,7 @@ namespace EventMamangement
         {
             double amount = 0.0;
             bool ok = true;
-            if (double.TryParse(txtfeeperparticiapant.Text, out amount) && (amount >= 0.0))
+            if (double.TryParse(txtcostperparticipant.Text, out amount) && (amount >= 0.0))
             {
                 eventManager.FeePerperson = amount;
             }
@@ -152,9 +152,9 @@ namespace EventMamangement
             Participant participant = new Participant(); 
             partcipant.FirstName = txtfirstname.Text;
             partcipant. LastName  = txtlastname.Text;
-
+            
             Address address = ReadAddress();
-
+            
             //connect address to a participant  object
             partcipant.Address = address;
             bool ok = partcipant.Validate();
@@ -194,7 +194,7 @@ namespace EventMamangement
 
         private void btnchange_Click(object sender, EventArgs e)
         {
-            int index = lstListBoxItemSelected();
+               int index = lstListBoxItemSelected();
             if (index < 0)
                 return;
             Participant participant = eventManager.participants.GetParticipantAt(index);

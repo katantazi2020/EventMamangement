@@ -15,16 +15,16 @@ namespace EventMamangement
 
 
 
-        ParticipantManager participantManager = new ParticipantManager();
+        ParticipantManager pManager = new ParticipantManager();
         //CONSTRUCTOR
         public EventManager()
         {
-            participantManager = new ParticipantManager();
+            pManager = new ParticipantManager();
         }
         #region PROPERTIES
         public ParticipantManager participants
         {
-            get { return participantManager; }
+            get { return pManager; }
         }
         public string Title
         {
@@ -66,6 +66,6 @@ namespace EventMamangement
             return participants.Count * feePerperson;
         }
         #endregion
-
+  
     }
 }

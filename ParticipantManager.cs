@@ -43,13 +43,15 @@ namespace EventMamangement
             participants.Add(participant);
             return true;
         }
-        public bool AddPartcipant(Participant participantIn)
+        public bool AddPartcipant(Participant participantIn, Address addressIn)
         {
             if (participantIn == null)
                 return false;
             participants.Add(participantIn);
+        
             return true;
         }
+
 
         public bool ChangeParticipantAt(Participant participantIn, int index)
         {
